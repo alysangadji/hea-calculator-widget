@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Hello World, CalculatorWidget!</string>
+    <string name="app_name">CalculatorWidget</string>
+    
+    <!-- Control String Values -->
+    <string name="widget_memory_clear">MC</string>
+    <string name="widget_memory_record">MR</string>
+    <string name="widget_memory_add">M+</string>
+    <string name="widget_memory_remove">M-</string>
+    <string name="widget_clear">C</string>
+    <string name="widget_all_clear">AC</string>
+    <string name="widget_negative">+/-</string>
+    <string name="widget_divide">/</string>
+    <string name="widget_multiple">*</string>
+    <string name="widget_minus">-</string>
+    <string name="widget_plus">+</string>
+    <string name="widget_equal">=</string>
+    <string name="widget_decimal">.</string>
+    <string name="widget_one">1</string>
+    <string name="widget_two">2</string>
+    <string name="widget_three">3</string>
+    <string name="widget_four">4</string>
+    <string name="widget_five">5</string>
+    <string name="widget_six">6</string>
+    <string name="widget_seven">7</string>
+    <string name="widget_eight">8</string>
+    <string name="widget_nine">9</string>
+    <string name="widget_zero">0</string>
+	<!-- Control String Values -->
+    
+    <!-- Control Color Values -->
+    <color name="widget_btn_text_color">#FFFFFF</color>
+    <color name="widget_bg_color">#FFFFFF</color>
+    <!-- Control Color Values -->
+    
+</resources>

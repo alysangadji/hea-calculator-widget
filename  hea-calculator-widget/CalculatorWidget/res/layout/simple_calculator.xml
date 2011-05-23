@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/rounded_corner_box">
+    <TextView android:text="TextView" android:gravity="right|center" android:editable="false" android:enabled="false" android:id="@+id/TextValue" android:layout_weight="1" android:layout_height="wrap_content" android:layout_width="match_parent"></TextView>
+    <TextView android:text="TextView" android:gravity="right|center" android:layout_width="match_parent" android:editable="false" android:enabled="false" android:singleLine="true" android:layout_gravity="right" android:id="@+id/TextHistory" android:layout_weight="1" android:layout_height="wrap_content"></TextView>
+	<LinearLayout android:id="@+id/linearLayout00" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:orientation="horizontal">
+		<LinearLayout android:id="@+id/linearLayout01" android:layout_width="match_parent" android:layout_weight="1" android:layout_height="match_parent" android:orientation="vertical">
+			<LinearLayout android:id="@+id/linearLayout02" android:orientation="horizontal" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/ButtonMemoryClear" android:layout_height="match_parent" android:text="@string/widget_memory_clear" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/ButtonMemoryAdd" android:layout_height="match_parent" android:text="@string/widget_memory_add" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/ButtonMemoryRemove" android:text="@string/widget_memory_remove" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout03" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/ButtonAC" android:layout_height="match_parent" android:text="@string/widget_all_clear" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/ButtonNegative" android:layout_height="match_parent" android:text="@string/widget_negative" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/ButtonDivide" android:layout_height="match_parent" android:text="@string/widget_divide" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout04" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/Button07" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_seven" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button08" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_eight" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button09" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_nine" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout05" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/Button04" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_four" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button05" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_five" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button06" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_six" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout06" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/Button01" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_one" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button02" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_two" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/Button03" android:layout_height="match_parent" android:layout_weight="1" android:text="@string/widget_three" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout07" android:orientation="horizontal" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="match_parent">
+				<Button android:id="@+id/Button00" android:text="@string/widget_zero" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+				<Button android:id="@+id/ButtonDecimal" android:layout_height="match_parent" android:text="@string/widget_decimal" android:layout_width="match_parent" android:layout_weight="1" android:textColor="@color/widget_btn_text_color" ></Button>
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+			android:id="@+id/linearLayout08" android:orientation="vertical" android:layout_weight="3">
+			<Button android:text="@string/widget_memory_record" android:id="@+id/ButtonMemoryRecord" android:layout_weight="1" android:layout_height="match_parent" android:layout_width="match_parent" android:textColor="@color/widget_btn_text_color" ></Button>
+			<Button android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:text="@string/widget_multiple" android:id="@+id/ButtonMutiple" android:layout_weight="1"  android:textColor="@color/widget_btn_text_color" ></Button>
+			<Button android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:text="@string/widget_minus" android:id="@+id/ButtonMinus" android:layout_weight="1"  android:textColor="@color/widget_btn_text_color" ></Button>
+			<Button android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:text="@string/widget_plus" android:id="@+id/ButtonPlus" android:layout_weight="1"  android:textColor="@color/widget_btn_text_color" ></Button>
+			<Button android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:text="@string/widget_equal" android:id="@+id/ButtonEqual" android:layout_weight="0.8"  android:textColor="@color/widget_btn_text_color" ></Button>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
