@@ -19,15 +19,15 @@ public class CalculatorWidget extends AppWidgetProvider {
 		final int N = appWidgetIds.length;
 		for (int i = 0; i < N; i++) {
 			int appWidgetId = appWidgetIds[i];
-			RemoteViews views = new RemoteViews(context.getPackageName(),
-					R.layout.simple_calculator);
 			
 			// Create an Intent to launch CalculatorWidget
 			Intent intent = new Intent(context, CalculatorWidget.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-			
+            
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
+            RemoteViews views = new RemoteViews(context.getPackageName(),
+            		R.layout.simple_calculator);
             views.setOnClickPendingIntent(R.id.Button00, pendingIntent);
             
 			appWidgetManager.updateAppWidget(appWidgetId, views);
