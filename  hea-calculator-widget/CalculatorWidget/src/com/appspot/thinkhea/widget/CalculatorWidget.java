@@ -11,6 +11,7 @@ import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.appspot.thinkhea.R;
+import com.appspot.thinkhea.model.Calculator;
 
 public class CalculatorWidget extends AppWidgetProvider {
 	private static final String ACTION_WIDGET_CONTROL = "com.appspot.thinkhea.widget.WIDGET_CONTROL";
@@ -33,6 +34,11 @@ public class CalculatorWidget extends AppWidgetProvider {
 			"ButtonMinus", "ButtonMutiple", "ButtonNegative", "ButtonPlus",
 			"TextHistory", "TextValue" };
 	
+	private Calculator calculator = new Calculator();
+	
+	/* Event Handling
+	 * */
+	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		final String action = intent.getAction();
@@ -42,7 +48,7 @@ public class CalculatorWidget extends AppWidgetProvider {
 					AppWidgetManager.EXTRA_APPWIDGET_ID,
 					AppWidgetManager.INVALID_APPWIDGET_ID);
 			if (appWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
-				fnHandleCommand(context, intent,appWidgetId);
+				fnHandleCommand(context, intent, appWidgetId);
 			}
 		} else {
 			super.onReceive(context, intent);
@@ -53,6 +59,7 @@ public class CalculatorWidget extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		Log.i(LOG_TAG, "onUpdate()");
+		calculator.clearAll();
 		final int N = appWidgetIds.length;
 		for (int i = 0; i < N; i++) {
 			int appWidgetId = appWidgetIds[i];
@@ -75,7 +82,6 @@ public class CalculatorWidget extends AppWidgetProvider {
 	private void addOnClickListerners(RemoteViews remoteView, Context context,
 			int appWidgetId) {
 		for (int i = 0; i < CONTROLS.length; i++) {
-			Log.i(LOG_TAG, "addOnClickListerners(): " + i + " : " + CONTROLS[i]);
 			remoteView.setOnClickPendingIntent(
 					CONTROLS[i],
 					makeControlPendingIntent(context, CONTROLS[i], appWidgetId,
@@ -87,36 +93,92 @@ public class CalculatorWidget extends AppWidgetProvider {
 			int controlID, int appWidgetId, int request_code) {
 		Intent action = new Intent(ACTION_WIDGET_CONTROL);
 		action.setAction(ACTION_WIDGET_CONTROL);
-		action.putExtra(COMMAND, controlID);
 		action.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+		action.putExtra(COMMAND, controlID);
 		PendingIntent p = PendingIntent.getBroadcast(context, request_code,
 				action, PendingIntent.FLAG_UPDATE_CURRENT);
 		return p;
 	}
 
 	// onButton Action received, handle the events.
-	private void fnHandleCommand(Context context, Intent intent,int appWidgetId) {
+	private void fnHandleCommand(Context context, Intent intent, int appWidgetId) {
 		int control_id = intent.getIntExtra(COMMAND, -1);
-		for (int i = 0; i < CONTROLS.length; i++) {
-			if (control_id == CONTROLS[i]) {
-				fnVibrate(context);
-				fnUpdateUI(context,appWidgetId,CONTROLSNAME[i]);
-				Toast.makeText(context,
-						"onReceive() ACTION :" + CONTROLSNAME[i],
-						Toast.LENGTH_SHORT).show();
-			}
+		switch (control_id) {
+		case R.id.Button00:
+			calculator.press(0);
+			break;
+		case R.id.Button01:
+			calculator.press(1);
+			break;
+		case R.id.Button02:
+			calculator.press(2);
+			break;
+		case R.id.Button03:
+			calculator.press(3);
+			break;
+		case R.id.Button04:
+			calculator.press(4);
+			break;
+		case R.id.Button05:
+			calculator.press(5);
+			break;
+		case R.id.Button06:
+			calculator.press(6);
+			break;
+		case R.id.Button07:
+			calculator.press(7);
+			break;
+		case R.id.Button08:
+			calculator.press(8);
+			break;
+		case R.id.Button09:
+			calculator.press(9);
+			break;
+		case R.id.ButtonMemoryAdd:
+			calculator.plus();
+			break;
+		case R.id.ButtonMinus:
+			calculator.minus();
+			break;
+		case R.id.ButtonMutiple:
+			calculator.multiple();
+			break;
+		case R.id.ButtonDivide:
+			calculator.divide();
+			break;
+		case R.id.ButtonEqual:
+			calculator.equals();
+			break;
+		default:
+			break;
 		}
+		fnVibrate(context);
+		fnUpdateUI(context, appWidgetId,"",calculator.getHistory());
+		Log.i(LOG_TAG, "Result(): " +calculator.getHistory());
+	}
+
+	/* UI Handling
+	 * 
+	 * */
+	private void fnToast(Context context,String s){
+		 Toast.makeText(context,s,Toast.LENGTH_SHORT).show();
 	}
 	
-	private void fnUpdateUI(Context context,int appWidgetId,String value){
+	private void fnUpdateUI(Context context, int appWidgetId, String value, String history) {
 		RemoteViews remoteView = new RemoteViews(context.getPackageName(),
 				R.layout.simple_calculator);
+		
 		remoteView.setTextViewText(R.id.TextValue, value);
-		AppWidgetManager.getInstance(context).updateAppWidget(appWidgetId, remoteView);
+		remoteView.setTextViewText(R.id.TextHistory, history);
+		AppWidgetManager.getInstance(context).updateAppWidget(appWidgetId,
+				remoteView);
 	}
 	
 	private void fnVibrate(Context context) {
-		Vibrator vibrator =(Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
-		vibrator.vibrate(200);
+		Vibrator vibrator = (Vibrator) context
+				.getSystemService(Context.VIBRATOR_SERVICE);
+		if (vibrator.hasVibrator() == true) {
+			vibrator.vibrate(50);
+		}
 	}
 }
