@@ -2,6 +2,8 @@ package com.appspot.thinkhea.model;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import android.util.Log;
+
 
 public class Calculator {
 	private Queue<String> input_history = new LinkedList<String>();
@@ -14,7 +16,7 @@ public class Calculator {
 	/* Structural Functions
 	 * */
 	public void clearAll() {
-		input_history.clear();
+		//input_history.clear();
 	}
 	
 	public String getHistory(){
@@ -51,6 +53,7 @@ public class Calculator {
 	
 	public void press(int i) {
 		currentDisplay.append(i);
+		input_history.add(i+"");
 	}
 	public void plus() {
 		currentDisplay.append("+");
