@@ -8,6 +8,12 @@
     <string name="widget_memory_record">MR</string>
     <string name="widget_memory_add">M+</string>
     <string name="widget_memory_remove">M-</string>
+    
+    <string name="widget_percentage">%</string>
+    <string name="widget_back">&lt;</string>
+    <string name="widget_eval_open">(</string>
+    <string name="widget_eval_close">)</string>
+    
     <string name="widget_clear">C</string>
     <string name="widget_all_clear">AC</string>
     <string name="widget_negative">+/-</string>
