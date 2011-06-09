@@ -59,7 +59,7 @@ public class CalculatorWidget extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		Log.i(LOG_TAG, "onUpdate()");
-		calculator.clearAll();
+
 		final int N = appWidgetIds.length;
 		for (int i = 0; i < N; i++) {
 			int appWidgetId = appWidgetIds[i];
@@ -105,56 +105,56 @@ public class CalculatorWidget extends AppWidgetProvider {
 		int control_id = intent.getIntExtra(COMMAND, -1);
 		switch (control_id) {
 		case R.id.Button00:
-			calculator.press(0);
+
 			break;
 		case R.id.Button01:
-			calculator.press(1);
+			
 			break;
 		case R.id.Button02:
-			calculator.press(2);
+			;
 			break;
 		case R.id.Button03:
-			calculator.press(3);
+
 			break;
 		case R.id.Button04:
-			calculator.press(4);
+
 			break;
 		case R.id.Button05:
-			calculator.press(5);
+
 			break;
 		case R.id.Button06:
-			calculator.press(6);
+
 			break;
 		case R.id.Button07:
-			calculator.press(7);
+
 			break;
 		case R.id.Button08:
-			calculator.press(8);
+
 			break;
 		case R.id.Button09:
-			calculator.press(9);
+
 			break;
 		case R.id.ButtonMemoryAdd:
-			calculator.plus();
+
 			break;
 		case R.id.ButtonMinus:
-			calculator.minus();
+
 			break;
 		case R.id.ButtonMutiple:
-			calculator.multiple();
+
 			break;
 		case R.id.ButtonDivide:
-			calculator.divide();
+
 			break;
 		case R.id.ButtonEqual:
-			calculator.equals();
+
 			break;
 		default:
 			break;
 		}
 		fnVibrate(context);
-		fnUpdateUI(context, appWidgetId,"",calculator.getHistory());
-		Log.i(LOG_TAG, "Result(): " +calculator.getHistory());
+		fnUpdateUI(context, appWidgetId,"","");
+		Log.i(LOG_TAG, "Result(): " );
 	}
 
 	/* UI Handling
