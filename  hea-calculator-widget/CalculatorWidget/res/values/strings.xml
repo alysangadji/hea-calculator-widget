@@ -10,14 +10,14 @@
     <string name="widget_memory_remove">M-</string>
     
     <string name="widget_percentage">%</string>
-    <string name="widget_back">&lt;</string>
+    <string name="widget_back">⇐</string>
     <string name="widget_eval_open">(</string>
     <string name="widget_eval_close">)</string>
     
     <string name="widget_clear">C</string>
     <string name="widget_all_clear">AC</string>
     <string name="widget_negative">+/-</string>
-    <string name="widget_divide">/</string>
+    <string name="widget_divide">÷</string>
     <string name="widget_multiple">*</string>
     <string name="widget_minus">-</string>
     <string name="widget_plus">+</string>
@@ -35,9 +35,14 @@
     <string name="widget_zero">0</string>
 	<!-- Control String Values -->
     
-    <!-- Control Color Values -->
+    <!-- Control Color Values -->    
     <color name="widget_btn_text_color">#FFFFFF</color>
+    <color name="widget_btn_BG_color">#D1D1D1</color>
     <color name="widget_bg_color">#FFFFFF</color>
     <!-- Control Color Values -->
+    
+    <!-- Control Color Values -->    
+    <string name="menu_virbrate_text">Virbrate</string>
+     <!-- Control Color Values -->
     
 </resources>
