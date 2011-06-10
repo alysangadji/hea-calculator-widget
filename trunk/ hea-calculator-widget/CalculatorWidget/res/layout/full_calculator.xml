@@ -3,13 +3,13 @@
 	android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
     <TextView android:layout_gravity="right" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/TextHistory" android:gravity="right|center" android:inputType="textCapWords|textMultiLine" android:layout_weight="0.3"></TextView>
     <View android:background="@drawable/gradient" android:layout_width="wrap_content" android:layout_height="1dp" android:id="@+id/line1"></View>
-    <TextView android:gravity="right|center" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/TextValue" android:inputType="text"></TextView>
+    <TextView android:gravity="right|center" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/TextValue" android:inputType="text" android:layout_weight="0.1"></TextView>
     <View
         android:layout_width="wrap_content"
         android:background="@drawable/gradient"
         android:layout_height="1dp" android:id="@+id/line2"></View>
 	<LinearLayout android:layout_width="match_parent"
-		android:orientation="horizontal" android:layout_height="wrap_content">
+		android:orientation="horizontal" android:layout_height="wrap_content" android:layout_weight="0.6">
 		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:id="@+id/tableLayout" android:layout_height="match_parent"
 			android:layout_width="match_parent" android:layout_weight="1">

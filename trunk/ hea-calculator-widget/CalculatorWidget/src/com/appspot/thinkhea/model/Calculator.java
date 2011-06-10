@@ -13,7 +13,7 @@ public class Calculator {
 		operators.put("+", new int[] { 0, LEFT_ASSOC });
         operators.put("-", new int[] { 0, LEFT_ASSOC });
         operators.put("*", new int[] { 5, LEFT_ASSOC });
-        operators.put("/", new int[] { 5, LEFT_ASSOC });
+        operators.put("÷", new int[] { 5, LEFT_ASSOC });
         operators.put("%", new int[] { 5, LEFT_ASSOC });
         operators.put("^", new int[] { 10, RIGHT_ASSOC });
 	}
@@ -119,6 +119,11 @@ public class Calculator {
 					v1 = ((Double) stack.pop()).doubleValue();
 					stack.push(new Double(v1 * v2));
 					break;
+				case '÷':
+					v2 = ((Double) stack.pop()).doubleValue();
+					v1 = ((Double) stack.pop()).doubleValue();
+					stack.push(new Double(v1 / v2));
+					break;
 				case '+':
 					v2 = ((Double) stack.pop()).doubleValue();
 					v1 = ((Double) stack.pop()).doubleValue();
@@ -128,11 +133,6 @@ public class Calculator {
 					v2 = ((Double) stack.pop()).doubleValue();
 					v1 = ((Double) stack.pop()).doubleValue();
 					stack.push(new Double(v1 - v2));
-					break;
-				case '/':
-					v2 = ((Double) stack.pop()).doubleValue();
-					v1 = ((Double) stack.pop()).doubleValue();
-					stack.push(new Double(v1 / v2));
 					break;
 				case '%':
 					v1 = ((Double) stack.pop()).doubleValue();
